@@ -17,7 +17,7 @@ const answeredQuestionsSchema = new mongoose.Schema({
       possible_answers: [String],
       selected_answer: String
     }],
-    required: [true, 'correct answer is required'],
+    required: [true, 'results is required'],
   }
 }, { timestamps: true });
 
