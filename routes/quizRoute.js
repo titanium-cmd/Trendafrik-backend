@@ -1,5 +1,5 @@
 const express = require('express');
-const { getQuestions, saveQuizResults } = require('../controllers/quizController');
+const { getQuestions, saveQuizResults, getUserQuizResults } = require('../controllers/quizController');
 const router = express.Router();
 const { authMiddleware } = require('../middlewares/authMiddleware');
 
@@ -16,5 +16,12 @@ router.get('/', authMiddleware, getQuestions);
  * @security JWT
  */
 router.post('/', authMiddleware, saveQuizResults);
+
+/**
+ * handle quiz results retrieval
+ * @route {GET} /results
+ * @security JWT
+ */
+router.get('/results', authMiddleware, getUserQuizResults);
 
 module.exports = router;
