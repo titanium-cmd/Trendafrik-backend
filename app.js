@@ -1,11 +1,7 @@
 // Import required modules and packages
 const express = require('express');
 const logger = require('morgan');
-const connectDB = require('./db');
 const cors = require('cors');
-
-// Connect to the MongoDB database using the connectDB function
-connectDB();
 
 // Create an instance of the Express application
 const app = express();
